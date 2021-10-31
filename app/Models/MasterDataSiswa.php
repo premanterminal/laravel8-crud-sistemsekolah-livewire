@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class MasterDataSiswa extends Model
 {
     use HasFactory;
-    protected $guarded = [];
+    protected $fillable = ['nama_siswa', 'id_kelas', 'status', 'keterangan'];
+    //protected $guarded = [];
 }
