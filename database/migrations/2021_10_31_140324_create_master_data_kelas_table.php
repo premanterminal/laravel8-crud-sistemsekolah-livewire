@@ -15,6 +15,10 @@ class CreateMasterDataKelasTable extends Migration
     {
         Schema::create('master_data_kelas', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_kelas');
+            $table->string('id_wali_kelas');
+            $table->string('status');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }

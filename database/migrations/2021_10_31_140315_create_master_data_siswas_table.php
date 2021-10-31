@@ -13,8 +13,12 @@ class CreateMasterDataSiswasTable extends Migration
      */
     public function up()
     {
-        Schema::create('master_data_siswas', function (Blueprint $table) {
+        Schema::create('master_data_siswa', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_siswa');
+            $table->string('id_kelas');
+            $table->string('status');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateMasterDataSiswasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('master_data_siswas');
+        Schema::dropIfExists('master_data_siswa');
     }
 }

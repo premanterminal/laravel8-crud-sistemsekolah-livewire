@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class MasterDataKelas extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 }
