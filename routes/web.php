@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\MasterdataGuru; //Load class Guru
+use App\Http\Livewire\MasterdataSiswa; //Load class Siswa
+use App\Http\Livewire\MasterdataKelas; //Load class Kelas
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
+    Route::get('/dashboard', function() {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('masterdata_guru', MasterdataGuru::class)->name('masterdata_guru'); //Tambahkan routing ini
+    Route::get('masterdata_siswa', MasterdataSiswa::class)->name('masterdata_siswa'); //Tambahkan routing ini
+    Route::get('masterdata_kelas', MasterdataKelas::class)->name('masterdata_kelas'); //Tambahkan routing ini
+
+});
